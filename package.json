@@ -4,7 +4,7 @@
   "main": "index.js",
   "sideEffect": false,
   "author": "Jason Feng <solidzoro@live.com>",
-  "description": "Watch File Change And Run Callback Webpack Plugin",
+  "description": "generate a buildinfo.json file to public directory",
   "license": "MIT",
   "homepage": "https://github.com/SolidZORO/gen-buildinfo-webpack-plugin",
   "repository": {

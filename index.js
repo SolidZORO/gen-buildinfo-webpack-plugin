@@ -21,8 +21,8 @@ const getBuildInfo = (opts) => {
 
   return {
     PKG_NAME: pkg.name || '-',
-    VERSION: pkg.version || '0.0.0',
     AUTHOR: pkg.author ? `${pkg.author}`.replace('@', '[#]') : null,
+    VERSION: pkg.version || '0.0.0',
     VERSION_DASH: pkg.version.replace(/\./g, '-') || '0-0-0',
     VERSION_NUMBER: pkg.version.replace(/\./g, '') || '000',
     NODE_ENV: process.env.NODE_ENV,
@@ -65,8 +65,6 @@ class GenBuildInfoWebpackPlugin {
 }
 
 module.exports = GenBuildInfoWebpackPlugin;
-module.exports.getBuildInfo = getBuildInfo;
 
-// module.exports = {
-//   getBuildInfo,
-// };
+// use for Next.js env
+module.exports.getBuildInfo = getBuildInfo;

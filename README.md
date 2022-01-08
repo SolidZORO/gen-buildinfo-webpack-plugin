@@ -5,21 +5,30 @@
 [![size][size-img]][size-url]
 [![download][download-img]][download-url]
 
-🚧 WIP Project
+Generate a buildinfo.json file to public directory.
 
 
 ## Installation
 
 ```sh
+# Webpack (CRA)
 yarn add -D gen-buildinfo-webpack-plugin
+ 
+# Next.js
+yarn add gen-buildinfo-webpack-plugin 
 ```
 
 
 ## Usage
 
+### Webpack (CRA)
+
 ```javascript
-new BuildInfoWebpackPlugin({
-  package: require('../../package.json'),
+// webpack.config.js
+const GenBuildinfoWebpackPlugin = require('gen-buildinfo-webpack-plugin');
+
+new GenBuildinfoWebpackPlugin({
+  package: require('./package.json'),
   //
   // [Options]
   // commitHashLength: 4, 
@@ -27,6 +36,27 @@ new BuildInfoWebpackPlugin({
   // buildFileName: 'buildinfo.json',
 })
 ```
+
+### Next.js
+
+```javascript
+// next.config.js
+// use `process.env.NEXT_PUBLIC_BUILD_INFO`
+const { getBuildInfo } = require('gen-buildinfo-webpack-plugin');
+
+module.exports = {
+  env: {
+    NEXT_PUBLIC_BUILD_INFO: JSON.stringify(
+      getBuildInfo({ package: require('./package.json') }),
+    ),
+  },
+  webpack(webpackConfig) {
+    return webpackConfig;
+  },
+  // ....
+}
+```
+
 
 ## License
 
