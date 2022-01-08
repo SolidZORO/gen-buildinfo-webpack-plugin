@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/compare/v1.1.0...v1.2.0) (2022-01-08)
+
+
+### Features
+
+* use for Webpack (CRA) and Next.js ([403e471](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/commit/403e47164eb6f0e781ae5c6dd305932d96b5a3aa))
+
 ## [1.1.0](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/compare/v1.0.0...v1.1.0) (2022-01-08)
 
 
