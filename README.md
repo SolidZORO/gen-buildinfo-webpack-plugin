@@ -11,12 +11,22 @@
 ## Installation
 
 ```sh
-yarn add buildinfo-webpack-plugin
+yarn add -D buildinfo-webpack-plugin
 ```
 
 
 ## Usage
 
+```javascript
+new BuildInfoWebpackPlugin({
+  package: require('../../package.json'),
+  //
+  // [Options]
+  // commitHashLength: 4, 
+  // buildFileDir: PROJECT_PUBLIC_DIR,
+  // buildFileName: 'buildinfo.json',
+})
+```
 
 ## License
 
