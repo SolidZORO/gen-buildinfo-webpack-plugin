@@ -1,18 +1,18 @@
 {
-  "name": "buildinfo-webpack-plugin",
+  "name": "gen-buildinfo-webpack-plugin",
   "version": "1.0.0",
   "main": "index.js",
   "sideEffect": false,
   "author": "Jason Feng <solidzoro@live.com>",
   "description": "Watch File Change And Run Callback Webpack Plugin",
   "license": "MIT",
-  "homepage": "https://github.com/SolidZORO/buildinfo-webpack-plugin",
+  "homepage": "https://github.com/SolidZORO/gen-buildinfo-webpack-plugin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SolidZORO/buildinfo-webpack-plugin.git"
+    "url": "https://github.com/SolidZORO/gen-buildinfo-webpack-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/SolidZORO/buildinfo-webpack-plugin/issues"
+    "url": "https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/issues"
   },
   "publishConfig": {
     "access": "public",
