@@ -23,11 +23,9 @@ const getBuildInfo = (opts) => {
     PKG_NAME: pkg.name || '-',
     AUTHOR: pkg.author ? `${pkg.author}`.replace('@', '[#]') : null,
     VERSION: pkg.version || '0.0.0',
-    VERSION_DASH: pkg.version.replace(/\./g, '-') || '0-0-0',
-    VERSION_NUMBER: pkg.version.replace(/\./g, '') || '000',
     NODE_ENV: process.env.NODE_ENV,
     BUILD_TIME: dayjs().format('YYYYMMDD-HHmmss'),
-    GIT_COMMIT_HASH: commitHash.substr(0, commitHashLength) || '0000',
+    COMMIT_HASH: commitHash.substr(0, commitHashLength) || '0000',
   };
 };
 
@@ -38,9 +36,9 @@ class GenBuildInfoWebpackPlugin {
 
     this.opts = {
       package: {},
+      fileDir: PROJECT_PUBLIC_DIR,
+      fileName: 'buildinfo.json',
       commitHashLength: 4,
-      buildFileDir: PROJECT_PUBLIC_DIR,
-      buildFileName: 'buildinfo.json',
       ...opts,
     };
   }
@@ -52,12 +50,12 @@ class GenBuildInfoWebpackPlugin {
         commitHashLength: this.opts.commitHashLength,
       });
 
-      console.log('\n✨ ${PLUGIN_NAME}\n\n', buildInfo, '\n');
+      // console.log('\n✨ ${PLUGIN_NAME}\n\n', buildInfo, '\n');
 
-      const { buildFileDir, buildFileName } = this.opts;
+      const { fileDir, fileName } = this.opts;
 
       fs.writeFileSync(
-        path.resolve(buildFileDir, buildFileName),
+        path.resolve(fileDir, fileName),
         JSON.stringify(buildInfo, null, 2),
       );
     });

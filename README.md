@@ -31,9 +31,9 @@ new GenBuildinfoWebpackPlugin({
   package: require('./package.json'),
   //
   // [Options]
+  // fileDir: PROJECT_PUBLIC_DIR,
+  // fileName: 'buildinfo.json',
   // commitHashLength: 4, 
-  // buildFileDir: PROJECT_PUBLIC_DIR,
-  // buildFileName: 'buildinfo.json',
 })
 ```
 
