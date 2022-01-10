@@ -1,21 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 const dayjs = require('dayjs');
+const getRepoInfo = require('git-repo-info');
 
 const PLUGIN_NAME = 'GenBuildInfoWebpackPlugin';
 
 const getBuildInfo = (opts) => {
-  let commitHash = '';
-
-  try {
-    const execStr = 'git rev-parse HEAD';
-    commitHash = require('child_process').execSync(execStr);
-    commitHash = commitHash.toString().trim();
-  } catch (err) {
-    console.log(err);
-    throw 'Not Found Git Commit Hash!';
-  }
-
+  const repoInfo = getRepoInfo();
+  // console.log('---- repoInfo ----\n', repoInfo);
+  const commitHash = repoInfo.sha;
   const pkg = opts.package || {};
   const commitHashLength = opts.commitHashLength || 4;
 
