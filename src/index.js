@@ -18,7 +18,7 @@ const getBuildInfo = (opts) => {
     VERSION: pkg.version || '0.0.0',
     NODE_ENV: process.env.NODE_ENV,
     BUILD_TIME: dayjs().format('YYYYMMDD-HHmmss'),
-    COMMIT_HASH: commitHash.substr(0, commitHashLength) || '0000',
+    COMMIT_HASH: commitHash ? commitHash.substr(0, commitHashLength) : '0000',
   };
 };
 
