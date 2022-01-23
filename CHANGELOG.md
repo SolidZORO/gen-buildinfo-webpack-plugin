@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/compare/v1.5.0...v1.5.1) (2022-01-23)
+
+
+### Bug Fixes
+
+* fixed commitHash is undefined ([8dbdd6a](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/commit/8dbdd6abe277ebc86250e158963569ca7326c282))
+
 ## [1.5.0](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/compare/v1.4.0...v1.5.0) (2022-01-10)
 
 
