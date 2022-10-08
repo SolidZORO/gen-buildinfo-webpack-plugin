@@ -5,6 +5,28 @@ const getRepoInfo = require('git-repo-info');
 
 const PLUGIN_NAME = 'GenBuildInfoWebpackPlugin';
 
+
+// e.g.
+// ['0', '0', '5']  5
+// ['1', '0', '0']  1 000 000
+// ['1', '1', '55'] 1 001 055
+// ['2', '18', '5'] 2 018 005
+// ['2', '51', '0'] 2 051 000
+const calcBuildNumber = (versionStr) => {
+  if (!versionStr) return 0;
+  if (!/\d{0,3}\.\d{0,3}\.\d{0,3}/.test(versionStr)) return 0;
+
+  let vn = 0;
+
+  versionStr.split('.')?.forEach((v, i) => {
+    if (i === 0) vn += Number(v) * 1000000;
+    if (i === 1) vn += Number(v) * 1000;
+    if (i === 2) vn += Number(v);
+  });
+
+  return vn;
+};
+
 const getBuildInfo = (opts) => {
   const repoInfo = getRepoInfo();
   // console.log('---- repoInfo ----\n', repoInfo);
@@ -12,10 +34,13 @@ const getBuildInfo = (opts) => {
   const pkg = opts.package || {};
   const commitHashLength = opts.commitHashLength || 4;
 
+  const VERSION = pkg.version || '0.0.0';
+
   return {
     PKG_NAME: pkg.name || '-',
     AUTHOR: pkg.author ? `${pkg.author}`.replace('@', '[#]') : null,
-    VERSION: pkg.version || '0.0.0',
+    VERSION,
+    BUILD_NUMBER: calcBuildNumber(VERSION), // output number
     NODE_ENV: process.env.NODE_ENV,
     BUILD_TIME: dayjs().format('YYYYMMDD-HHmmss'),
     COMMIT_HASH: commitHash ? commitHash.substr(0, commitHashLength) : '0000',
