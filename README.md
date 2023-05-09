@@ -57,6 +57,22 @@ module.exports = {
 }
 ```
 
+## Output
+
+```js
+const { getBuildInfo } = require('gen-buildinfo-webpack-plugin');
+
+// {
+//   "PKG_NAME": "demo",
+//   "AUTHOR": "Jason Feng <solidzoro[#]live.com>",
+//   "VERSION": "2.66.1",
+//   "BUILD_NUMBER": 2066001,
+//   "BUILD_TIME": "20230406-142929",
+//   "COMMIT_HASH": "c6ed"
+// };
+const buildInfo = getBuildInfo({ package: require('../../package.json') });
+```
+
 
 ## License
 
