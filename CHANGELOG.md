@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/compare/v1.6.0...v1.7.0) (2023-10-09)
+
+
+### Features
+
+* calcBuildNumber() compatible string '-' e.g. `2.71.1-hotfix-1` ([f937d8e](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/commit/f937d8e79f7725c67289a8668fda1865333b78b8))
+
 ## [1.6.0](https://github.com/SolidZORO/gen-buildinfo-webpack-plugin/compare/v1.5.1...v1.6.0) (2022-10-08)
 
 
