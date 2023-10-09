@@ -18,6 +18,11 @@ const calcBuildNumber = (versionStr) => {
 
   let vn = 0;
 
+  // if has e.g. `2.71.1-hotfix-1` or `2.71.1-XXXX`, ONLY take [0]
+  if(versionStr.includes('-')) {
+    versionStr =  versionStr.split('-')[0];
+  }
+
   versionStr.split('.')?.forEach((v, i) => {
     if (i === 0) vn += Number(v) * 1000000;
     if (i === 1) vn += Number(v) * 1000;
@@ -84,3 +89,4 @@ module.exports = GenBuildInfoWebpackPlugin;
 
 // use for Next.js env
 module.exports.getBuildInfo = getBuildInfo;
+module.exports.calcBuildNumber = calcBuildNumber;

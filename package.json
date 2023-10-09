@@ -29,6 +29,9 @@
     "versionup:minor": "standard-version -r minor",
     "versionup:major": "standard-version -r major",
     "versionup:init": "standard-version --first-release",
+    "-------------------------------- TEST ----": "----",
+    "test": "node ./__tests__/gen.test.js",
+    "test-vn": "node ./__tests__/vn.test.js",
     "-------------------------------- PROD ----": "----",
     "release-beta": "npm publish --dist-tag --tag beta",
     "release": "npm publish --dist-tag"
